@@ -1,5 +1,6 @@
 import React from "react";
 import "./postNote.css";
+import { API_BASE_URL } from "./config";
 
 class PostNote extends React.Component {
   constructor(props) {
@@ -33,7 +34,7 @@ class PostNote extends React.Component {
     e.preventDefault();
     const { name, content, folder } = this.state;
     const newNote = { name, content, folder };
-    const url = "http://localhost:8000/note";
+    //const url = "http://localhost:8000/note";
     // const test = JSON.stringify(newNote);
     // console.log(newNote);
 
@@ -45,7 +46,7 @@ class PostNote extends React.Component {
       }
     };
 
-    fetch(url, options)
+    fetch(`${API_BASE_URL}`, options)
       .then(res => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");

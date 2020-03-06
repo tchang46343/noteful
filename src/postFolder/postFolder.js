@@ -1,6 +1,6 @@
 import React from "react";
 import "./postFolder.css";
-
+import { API_BASE_URL } from "./config";
 class Folders extends React.Component {
   constructor(props) {
     super(props);
@@ -19,7 +19,7 @@ class Folders extends React.Component {
     e.preventDefault();
     const { name } = this.state;
     const newFolder = { name };
-    const url = "http://localhost:8000/folders";
+
     // const test = JSON.stringify(newFolder);
     // console.log(test);
     const options = {
@@ -30,7 +30,7 @@ class Folders extends React.Component {
       }
     };
 
-    fetch(url, options)
+    fetch(`${API_BASE_URL}`, options)
       .then(res => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");
