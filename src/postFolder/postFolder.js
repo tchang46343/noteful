@@ -1,6 +1,6 @@
 import React from "react";
 import "./postFolder.css";
-import { API_BASE_URL } from "./config";
+import { API_BASE_URL } from "../config";
 class Folders extends React.Component {
   constructor(props) {
     super(props);

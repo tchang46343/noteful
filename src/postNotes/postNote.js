@@ -1,6 +1,6 @@
 import React from "react";
 import "./postNote.css";
-import { API_BASE_URL } from "./config";
+import { API_BASE_URL } from "../config";
 
 class PostNote extends React.Component {
   constructor(props) {
