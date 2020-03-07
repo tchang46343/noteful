@@ -5,12 +5,20 @@ import { Link } from "react-router-dom";
 class HomePage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      title: "Welcome To The Noteful Home Page"
+    };
   }
   render() {
+    if (this.state.title !== "Welcome To The Noteful Home Page") {
+      throw new Error("hello");
+    }
     return (
       <div>
-        <header className="title"> Welcome To The Noteful Home Page</header>
+        <header className="title" value={this.state.title}>
+          {" "}
+          Welcome To The Noteful Home Page
+        </header>
         <main className="container">
           <section className="options">
             <Link to="/note" className="noteTag">
