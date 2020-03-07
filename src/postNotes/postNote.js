@@ -46,7 +46,7 @@ class PostNote extends React.Component {
       }
     };
 
-    fetch(`${API_BASE_URL}/note`, options)
+    fetch(`${API_BASE_URL}note`, options)
       .then(res => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");

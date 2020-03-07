@@ -30,7 +30,7 @@ class Folders extends React.Component {
       }
     };
 
-    fetch(`${API_BASE_URL}/folders`, options)
+    fetch(`${API_BASE_URL}folders`, options)
       .then(res => {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");
