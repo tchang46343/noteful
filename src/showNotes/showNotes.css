@@ -1,0 +1,19 @@
+.noteTitle {
+  text-align: center;
+  font: 32px;
+  font-weight: bold;
+}
+
+/* .container {
+  display: flex;
+  display: column;
+} */
+.noteNumber {
+  list-style-type: none;
+  margin: 5px 0;
+}
+.noteItems {
+  list-style-type: none;
+  font: 16px;
+  margin: 5px 0;
+}

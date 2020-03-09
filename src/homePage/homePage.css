@@ -9,10 +9,20 @@
   text-align: center;
 }
 .options {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   padding: 10px;
 }
 .noteTag {
+  text-decoration: none;
+  color: black;
+  border: solid black;
+  border-radius: 5px;
+  margin: 40px 25px;
+  padding: 15px;
+  font-size: 16px;
+}
+.folderTag {
   text-decoration: none;
   color: black;
   border: solid black;
@@ -21,7 +31,16 @@
   padding: 15px;
   font-size: 16px;
 }
-.folderTag {
+.showNote {
+  text-decoration: none;
+  color: black;
+  border: solid black;
+  border-radius: 5px;
+  margin: 50px 25px;
+  padding: 15px;
+  font-size: 16px;
+}
+.showFolder {
   text-decoration: none;
   color: black;
   border: solid black;

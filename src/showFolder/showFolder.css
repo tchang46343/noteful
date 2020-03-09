@@ -1,0 +1,12 @@
+.folderTitle {
+  text-align: center;
+  font: 32px;
+  font-weight: bold;
+}
+.folderItems {
+  text-decoration: none;
+  font: 16px;
+  list-style-type: none;
+  text-align: center;
+  padding: 10px 0;
+}

@@ -1,6 +1,8 @@
 import React from "react";
 import "./postFolder.css";
 import { API_BASE_URL } from "../config";
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 class Folders extends React.Component {
   constructor(props) {
     super(props);
@@ -20,8 +22,8 @@ class Folders extends React.Component {
     const { name } = this.state;
     const newFolder = { name };
 
-    // const test = JSON.stringify(newFolder);
-    // console.log(test);
+    const test = JSON.stringify(newFolder);
+    console.log(test);
     const options = {
       method: "POST",
       body: JSON.stringify(newFolder),
@@ -47,7 +49,21 @@ class Folders extends React.Component {
   render() {
     return (
       <div>
-        <header className="folderTitle">New Folder</header>
+        <nav>
+          <ul>
+            <li className="goHome">
+              <Link to="/" className="linkFolders">
+                Home
+              </Link>
+            </li>
+
+            <li className="PostNote">
+              <Link to="/showFolder" className="linkFolders">
+                View All Folders
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <form className="folderForm" onSubmit={e => this.handleSubmit(e)}>
           <label className="folderTitle"> Please enter folder name:</label>
           <div className="folderContainer">
@@ -69,3 +85,11 @@ class Folders extends React.Component {
 }
 
 export default Folders;
+
+Folders.propTypes = {
+  name: PropTypes.string.isRequired
+};
+
+Folders.defaultProps = {
+  name: "Name Must be a string"
+};

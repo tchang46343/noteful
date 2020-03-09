@@ -28,6 +28,14 @@ class HomePage extends React.Component {
             <Link to="/folder" className="folderTag">
               Add Folder
             </Link>
+
+            <Link to="/showNotes" className="showNote">
+              View All Notes
+            </Link>
+
+            <Link to="/showFolder" className="showFolder">
+              View All Folders
+            </Link>
           </section>
         </main>
       </div>

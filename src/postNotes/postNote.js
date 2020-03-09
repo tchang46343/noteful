@@ -1,7 +1,8 @@
 import React from "react";
 import "./postNote.css";
 import { API_BASE_URL } from "../config";
-
+import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 class PostNote extends React.Component {
   constructor(props) {
     super(props);
@@ -63,6 +64,21 @@ class PostNote extends React.Component {
   render() {
     return (
       <div>
+        <nav>
+          <ul>
+            <li className="goHome">
+              <Link to="/" className="linkFolders">
+                Home
+              </Link>
+            </li>
+
+            <li className="PostNote">
+              <Link to="/showNotes" className="linkFolders">
+                View All Notes
+              </Link>
+            </li>
+          </ul>
+        </nav>
         <header className="noteTitle">New Note</header>
         <form className="noteForm" onSubmit={e => this.handleSubmit(e)}>
           <label className="noteTitle"> Please enter Note name:</label>
@@ -109,3 +125,14 @@ class PostNote extends React.Component {
 }
 
 export default PostNote;
+PostNote.propTypes = {
+  name: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  folder: PropTypes.string.isRequired
+};
+
+PostNote.defaultProps = {
+  name: "Name must be a string",
+  content: "Content must be a string",
+  folder: "Folder must be a string"
+};

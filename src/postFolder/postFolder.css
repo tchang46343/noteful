@@ -36,3 +36,23 @@
   background-color: lightcyan;
   text-shadow: 2px 2px red;
 }
+
+nav ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-content: center;
+}
+.PostNote {
+  padding-right: 50px;
+  list-style-type: none;
+}
+.goHome {
+  padding-right: 50px;
+  list-style-type: none;
+}
+.linkFolders {
+  color: blue;
+  cursor: pointer;
+}
