@@ -116,7 +116,7 @@ class PostNote extends React.Component {
           </div>
 
           <div className="buttonContainerNote">
-            <button className="noteClick">Add Folder</button>
+            <button className="noteClick">Add Note</button>
           </div>
         </form>
       </div>
