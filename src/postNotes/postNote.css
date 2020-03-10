@@ -10,11 +10,11 @@
 }
 .noteName {
   width: 40%;
-  height: 20px;
+  height: 60px;
   text-align: center;
   border: solid black;
   border-radius: 5px;
-  font-size: 16px;
+  font-size: 12px;
   text-overflow: ellipsis;
 }
 .noteContent {

@@ -9,8 +9,20 @@ class PostNote extends React.Component {
     this.state = {
       name: "",
       content: "",
-      folder: ""
+      folder: "",
+      folders: []
     };
+  }
+
+  componentDidMount() {
+    fetch(`${API_BASE_URL}folders`)
+      .then(res => res.json())
+      .then(folders => {
+        this.setState({
+          folders
+        });
+      })
+      .catch(err => console.log(err));
   }
 
   nameChange(name) {
@@ -31,6 +43,17 @@ class PostNote extends React.Component {
     });
   }
 
+  generateFolderOptions = e => {
+    const folders = this.state.folders;
+    console.log(folders);
+    return folders.map(folder => {
+      return (
+        <option key={folder.id} value={folder.name}>
+          {folder.name}
+        </option>
+      );
+    });
+  };
   handleSubmit = e => {
     e.preventDefault();
     const { name, content, folder } = this.state;
@@ -52,7 +75,7 @@ class PostNote extends React.Component {
         if (!res.ok) {
           throw new Error("Something went wrong, please try again later");
         }
-        return alert("Your folder has been posted");
+        return alert("Your note has been posted");
       })
       .catch(err => {
         this.setState({
@@ -62,6 +85,8 @@ class PostNote extends React.Component {
   };
 
   render() {
+    const folderOptions = this.generateFolderOptions();
+
     return (
       <div>
         <nav>
@@ -106,13 +131,15 @@ class PostNote extends React.Component {
 
           <label className="noteTitle"> Choose a folder:</label>
           <div className="inputControls">
-            <input
+            <select
               className="noteName"
               placeholder="cats"
               value={this.state.folder}
               onChange={e => this.folderChange(e.target.value)}
               required
-            ></input>
+            >
+              {folderOptions}
+            </select>
           </div>
 
           <div className="buttonContainerNote">
